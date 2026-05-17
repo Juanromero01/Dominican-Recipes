@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dominican Recipes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <div class="page">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <h1 class="site-title">Dominican<br>Recipes</h1>
+        <p class="site-subtitle">Sabores de Quisqueya</p>
+
+     <nav class="main-nav">
+  <a href="index.html" class="nav-link active">Home</a>
+  <a href="services.html" class="nav-link">Services</a>
+  <a href="mortgage.html" class="nav-link">Mortgage Calculator</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+</nav>
+
+        <p class="bilingual-note">
+          Bilingual? Add a link here<br>to ES / EN later.
+        </p>
+      </div>
+    </aside>
+
+    <main class="content">
+
+      
+      <header class="hero">
+        <p class="hero-tagline">Traditional &amp; Modern</p>
+        <h2 class="hero-title">Dominican Republic Recipes</h2>
+        <p class="hero-description">
+          Explore authentic flavors from the Dominican Republic 
+
+   <div class="search-container">
+  <form onsubmit="searchRecipe(event)">
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search recipes (sancocho, tres golpes, pica pollo...)"
+    >
+    <button type="submit">Search</button>
+  </form>
+
+</div>
+
+        <div class="filter-pills">
+          <button class="pill pill-active">All</button>
+     
+        </div>
+      </header>
+
+     
+      <section class="section">
+        <div class="slider">
+  <div class="slides">
+
+    <img src="img/sancocho.jpg" class="slide active">
+    <img src="img/mangu.jpg" class="slide">
+    <img src="img/la-bandera.jpg" class="slide">
+    <img src="img/tres-golpes.jpg" class="slide">
+<img src="img/pastelon.jpg" class="slide">
+    <img src="img/asopao.jpg" class="slide">
+    <img src="img/tostones.jpg" class="slide">
+  </div>
+
+  <section id="sancocho"></section>
+<section id="bandera"></section>
+<section id="pica-pollo"></section>
+<section id="tres-golpes"></section>
+<section id="tostones"></section>
+
+ 
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+</div>
+        <h3 class="section-title">Recetas destacadas</h3>
+
+          <section class="section" id="drinks-section">
+
+
+    <a href="services.html#tres-golpes" class="recipe-card">
+    <img src="img/tres-golpes.webp">
+    <h3>Tres Golpes</h3>
+    <p>30m • Vegetarian</p>  
+
+      <a href="services.html#sancocho" class="recipe-card">
+    <img src="img/sancocho.jpg">
+    <h3>Sancocho</h3>
+    <p>2h 30m • Feeds 8</p>
+</a>
+
+<a href="services.html#bandera" class="recipe-card">
+   <img src="img/la-bandera.jpg">
+   <h3>La Bandera</h3>
+   <p>35m • Easy</p>
+</a>
+
+<a href="services.html#pica-pollo" class="recipe-card">
+   <img src="img/picapollo.avif">
+   <h3>Pica Pollo</h3>
+   <p>30m • Easy</p>
+</a>
+
+<a href="services.html#mangu" class="recipe-card">
+   <img src="img/mangu.jpg">
+   <h3>Mangú</h3>
+   <p>20m • Easy</p>
+</a>
+
+<a href="services.html#pastelon" class="recipe-card">
+   <img src="img/pastelon.jpg">
+   <h3>Pastelón</h3>
+   <p>45m • Medium</p>
+</a>
+
+<a href="services.html#asopao" class="recipe-card">
+   <img src="img/asopao.jpg">
+   <h3>Asopao</h3>
+   <p>40m • Medium</p>
+</a>
+
+<a href="services.html#tostones" class="recipe-card">
+   <img src="img/tostones.jpg">
+   <h3>Tostones</h3>
+   <p>15m • Easy</p>
+</a>
+
+      <section class="section">
+        <h3 class="section-title">Services</h3>
+        <p class="section-text">
+          Recipe testing, catering menus, and content creation for food brands.
+        </p>
+      </section>
+
+    
+      <footer class="footer">
+        <p>© 2025 Dominican Recipes • All rights reserved.</p>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
