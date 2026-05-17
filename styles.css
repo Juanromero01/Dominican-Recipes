@@ -1,8 +1,11 @@
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -11,6 +14,8 @@ body {
   background-color: #f5f3ef;
   color: #222;
 }
+
+/* PAGE LAYOUT */
 
 .page {
   display: flex;
@@ -44,6 +49,7 @@ body {
   opacity: 0.9;
 }
 
+/* NAVIGATION */
 
 .main-nav {
   display: flex;
@@ -79,33 +85,42 @@ body {
   opacity: 0.9;
 }
 
-
+/* MAIN CONTENT */
 
 .content {
   flex: 1;
   padding: 32px 48px;
 }
 
+/* HERO SECTION */
+
+.hero {
+  background: linear-gradient(to right, #3046ff, #4f63ff);
+  color: white;
+  padding: 40px;
+  border-radius: 18px;
+}
 
 .hero-tagline {
   text-transform: uppercase;
   letter-spacing: 0.13em;
   font-size: 12px;
-  color: #b45520;
+  color: #ffd0b5;
   margin: 0 0 6px;
 }
 
 .hero-title {
   margin: 0;
-  font-size: 32px;
+  font-size: 36px;
 }
 
-.hero-text {
+.hero-description {
   margin: 10px 0 20px;
   max-width: 560px;
   color: #faf6f6;
 }
 
+/* SEARCH */
 
 .search-container {
   display: flex;
@@ -141,13 +156,13 @@ body {
   background-color: #555;
 }
 
-
+/* FILTER PILLS */
 
 .filter-pills {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 26px;
+  margin-top: 20px;
 }
 
 .pill {
@@ -157,6 +172,8 @@ body {
   background-color: #f9f7f3;
   font-size: 13px;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .pill-active {
@@ -165,20 +182,22 @@ body {
   border-color: #111827;
 }
 
-
+/* SECTIONS */
 
 .section {
-  margin-top: 12px;
+  margin-top: 24px;
 }
 
 .section-title {
-  font-size: 20px;
-  margin: 0 0 14px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .section-text {
-  margin: 0 0 20px;
+  margin-bottom: 20px;
 }
+
+/* RECIPE CARDS */
 
 .recipe-grid {
   display: grid;
@@ -193,89 +212,123 @@ body {
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 }
 
-.recipe-details {
-    display: none;
-    padding: 10px;
-}
-
-.recipe-image {
-  height: 160px;
-  background-size: cover;
-  background-position: center;
+.recipe-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
 .recipe-body {
-  padding: 12px 14px 14px;
+  padding: 14px;
 }
 
 .recipe-name {
-  margin: 2px 0 6px;
-  font-size: 16px;
+  margin: 0 0 6px;
+  font-size: 18px;
 }
 
 .recipe-meta {
   margin: 0;
-  font-size: 13px;
+  font-size: 14px;
   color: #666;
 }
 
+/* SLIDER */
 
-
-.footer {
-  margin-top: 40px;
-  font-size: 13px;
-  color: #777;
+.slider {
+  position: relative;
+  max-width: 900px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
-@media (max-width: 900px) {
-  .page {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-  }
-
-  .content {
-    padding: 24px 20px 32px;
-  }
-}
-
-.container {
+.slides {
   display: flex;
-  height: 100vh;
-  font-family: Arial, sans-serif;
 }
 
-.sidebar {
-  width: 250px;
-  background: linear-gradient(to bottom, #b30000, #ff4d4d);
+.slide {
+  width: 100%;
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* SERVICES PAGE */
+
+.services-container {
+  max-width: 1100px;
+  margin: 40px auto;
   padding: 20px;
 }
 
-.sidebar nav a {
-  display: block;
-  margin: 10px 0;
-  padding: 10px;
-  background: white;
-  color: black;
-  text-decoration: none;
-  border-radius: 8px;
+.recipe-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
 }
 
-.sidebar nav a.active {
-  background: #222;
-  color: white;
+.recipe-section.reverse {
+  flex-direction: row-reverse;
 }
 
-.content {
+.recipe-text {
   flex: 1;
-  padding: 40px;
-  background: #f9f9f9;
 }
+
+.recipe-image img {
+  width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* MAP */
+
+.map-section {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.map-section img {
+  width: 300px;
+  opacity: 0.9;
+}
+
+/* CONTACT FORM */
 
 .contact-form {
   max-width: 500px;
@@ -311,221 +364,85 @@ body {
   background: #800000;
 }
 
-.recipes {
-  display: flex;
-  gap: 20px;
-}
+/* MORTGAGE CALCULATOR */
 
-.recipe-card {
+.calculator-box {
+  max-width: 500px;
   background: white;
-  padding: 10px;
-  border-radius: 10px;
-  width: 200px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-.pill {
-  text-decoration: none;
-  display: inline-block;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.slider {
-  position: relative;
-  max-width: 900px;
-  margin: 20px auto;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.slides {
-  display: flex;
-}
-
-.slide {
-  width: 100%;
-  display: none;
-}
-
-.slide.active {
+.calculator-box label {
   display: block;
-}
-
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  border-radius: 50%;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-.hero-slider {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-.services-container {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-
-.recipe-section {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 50px;
-}
-
-.recipe-section.reverse {
-  flex-direction: row-reverse;
-}
-
-.recipe-text {
-  flex: 1;
-}
-
-.recipe-image img {
-  width: 350px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.map-section {
-  text-align: center;
-  margin-top: 60px;
-}
-
-.map-section img {
-  width: 300px;
-  opacity: 0.9;
-}
-
-style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f4f4;
-}
-
-
-header {
-    background: #6344ee;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-.recipes-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 per row */
-  gap: 20px;
-  padding: 20px;
-}
-
-.recipe-detail {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-}
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.02);
-}
-
-.card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 10px;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.back-btn {
-  display: inline-block;
-  margin: 20px;
-  padding: 10px 15px;
-  background: #e63946;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
+  margin-top: 15px;
   font-weight: bold;
 }
 
-.back-btn:hover {
-  background: #c92f3a;
+.calculator-box input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
-.back-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
+.calculator-box button {
+  margin-top: 20px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  background: #111827;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.calculator-box{
-    max-width: 500px;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
+.calculator-box button:hover {
+  background: #333;
 }
 
-.calculator-box label{
-    display: block;
-    margin-top: 15px;
+.result-box {
+  margin-top: 25px;
+  text-align: center;
 }
 
-.calculator-box input{
+/* FOOTER */
+
+.footer {
+  margin-top: 40px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 900px) {
+
+  .page {
+    flex-direction: column;
+  }
+
+  .sidebar {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-}
+  }
 
-.calculator-box button{
-    margin-top: 20px;
-    padding: 12px;
+  .content {
+    padding: 24px 20px 32px;
+  }
+
+  .recipe-section,
+  .recipe-section.reverse {
+    flex-direction: column;
+  }
+
+  .recipe-image img {
     width: 100%;
-    border: none;
-    background: black;
-    color: white;
-    cursor: pointer;
-}
+  }
 
-.result-box{
-    margin-top: 25px;
-    text-align: center;
+  .search-container form {
+    width: 100%;
+  }
 }
